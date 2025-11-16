@@ -1,4 +1,6 @@
-export const config = {
+import artifactsService from './test/utils/artifactsService.js'
+
+export const config =  {
     //
     // ====================
     // Runner Configuration
@@ -20,6 +22,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
+
     specs: [
         './test/specs/**/*.js'
     ],
@@ -227,8 +230,13 @@ export const config = {
      * @param {boolean} result.passed    true if test has passed, otherwise false
      * @param {object}  result.retries   information about spec related retries, e.g. `{ attempts: 0, limit: 0 }`
      */
-    // afterTest: function(test, context, { error, result, duration, passed, retries }) {
-    // },
+
+   afterTest: async function(test, context, { error }) {
+       console.log('>> afterTest called:', { title: test && test.title, hasError: !!error });
+       if (error) {
+           await artifactsService.saveArtifactsOnFail({ title: test.title, error });
+       }
+   }
 
 
     /**

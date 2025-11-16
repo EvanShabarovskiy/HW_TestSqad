@@ -1,4 +1,4 @@
-import { browser, expect } from '@wdio/globals'
+import { expect } from '@wdio/globals'
 import homePage from '../pageobjects/home.page'
 import Header from '../pageobjects/header.page'
 import searchPage from '../pageobjects/search.page'
