@@ -1,18 +1,8 @@
 import Page from './page.js';
 
 class HomePage extends Page {
-    open() {
-        return super.open('');
-    }
-
-    get signUpBtn () {
-        return $('.HeaderMenu-link--sign-up');
-    }
-
-    async Click_SignUpBtn() {
-        await this.signUpBtn.waitForClickable();
-        await this.signUpBtn.click();
-    }
+    open() { return super.open('') }
+    get userAccBtn() { return $('button.Button--invisible.Button--medium.Button.Button--invisible-noVisuals.color-bg-transparent') }
 }
 
 export default new HomePage();
