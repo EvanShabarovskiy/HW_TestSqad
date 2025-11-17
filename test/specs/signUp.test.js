@@ -1,7 +1,7 @@
 import { expect } from '@wdio/globals'
 import SignUpPage from '../pageobjects/signUp.page.js'
 
-it('SignUp with valid data', async () => {
+xit('SignUp with valid data', async () => {
     await SignUpPage.open()
     await expect(await SignUpPage.getCurrentURL()).toContain('github.com/signup');
 

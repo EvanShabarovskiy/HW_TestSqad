@@ -12,6 +12,12 @@ class SignInPage extends Page {
     async fillPassword(pass) { await this.setValue(this.passwordInput, pass) }
 
     async clickSubmit() { await this.click(this.submitBtn) }
+
+    async logInUser(email, pass) {
+        this.fillEmail(email)
+        this.fillPassword(pass)
+        this.clickSubmit()
+    }
 }
 
 export default new SignInPage()

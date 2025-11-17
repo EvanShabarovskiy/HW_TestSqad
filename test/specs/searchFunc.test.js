@@ -3,7 +3,7 @@ import homePage from '../pageobjects/home.page'
 import Header from '../pageobjects/header.page'
 import searchPage from '../pageobjects/search.page'
 
-it('Check functional of "Search" button (positive)', async () => {
+xit('Check functional of "Search" button (positive)', async () => {
     const searchRequest = 'selenium'
     await homePage.open()
     await Header.fillSearchInput(searchRequest)

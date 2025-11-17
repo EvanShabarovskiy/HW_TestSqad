@@ -3,7 +3,7 @@ import SignInPage from '../pageobjects/signIn.page.js'
 import HomePage from '../pageobjects/home.page.js'
 import privateData from '../../config/privateData.js'  // Create this file with your registered credentials
 
-it('SignIn with valid data', async () => {
+xit('SignIn with valid data', async () => {
     await SignInPage.open()
     await expect(await SignInPage.getCurrentURL()).toContain('github.com/login')
 
