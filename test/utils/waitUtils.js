@@ -1,4 +1,4 @@
-export async function waitForExactUrl(expectedUrl, timeout = 5000) {
+export async function waitForExactUrl(expectedUrl, timeout = 10000) {
     await browser.waitUntil(
         async () => (await browser.getUrl()) === expectedUrl,
         {
@@ -8,7 +8,7 @@ export async function waitForExactUrl(expectedUrl, timeout = 5000) {
     );
 }
 
-export async function waitForUrlStartsWith(prefix, timeout = 5000) {
+export async function waitForUrlStartsWith(prefix, timeout = 10000) {
     await browser.waitUntil(
         async () => (await browser.getUrl()).startsWith(prefix),
         {
@@ -18,7 +18,7 @@ export async function waitForUrlStartsWith(prefix, timeout = 5000) {
     );
 }
 
-export async function waitForUrlContains(fragment, timeout = 5000) {
+export async function waitForUrlContains(fragment, timeout = 10000) {
     await browser.waitUntil(
         async () => (await browser.getUrl()).includes(fragment),
         {

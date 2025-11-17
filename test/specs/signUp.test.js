@@ -1,17 +1,17 @@
 import { expect } from '@wdio/globals'
-import SignUpPage from '../pageobjects/signUp.page.js'
+import { waitForUrlContains} from '../utils/waitUtils.js';
+import signUpPage from '../pageobjects/signUp.page.js'
 
-xit('SignUp with valid data', async () => {
-    await SignUpPage.open()
-    await expect(await SignUpPage.getCurrentURL()).toContain('github.com/signup');
-
-    await SignUpPage.fillEmail("someemaildortest@gmail.com")
-    await SignUpPage.fillPassword("Adbgghgdas123!")
-    await SignUpPage.fillUserName("PetroBatkovich")
-    await SignUpPage.choseRandomCountry()
-    await SignUpPage.clickCheckBox()
-    await SignUpPage.clickSubmit()
-    await SignUpPage.checkIsVerifyAccPage()
+it('SignUp with valid data', async () => {
+    await signUpPage.open()
+    await waitForUrlContains('https://github.com/signup')
+    await signUpPage.fillEmail("someemaildortest@gmail.com")
+    await signUpPage.fillPassword("Adbgghgdas123!")
+    await signUpPage.fillUserName("PetroBatkovich")
+    await signUpPage.choseRandomCountry()
+    await signUpPage.clickCheckBox()
+    await signUpPage.clickSubmit()
+    await signUpPage.checkIsVerifyAccPage()
 
     //It doesn't work anymore because of the captcha.
     //await SignUpPage.submitWhenChecked()
